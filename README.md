@@ -38,3 +38,7 @@ print(get_random_secret_key())
 
     Display data
 
+## About
+This django project is used to fetch Canadian Drug Shortage api from Gespharx8 exported spreadsheet. 
+
+The django boilerplate comes from https://github.com/archatas/django-myproject
