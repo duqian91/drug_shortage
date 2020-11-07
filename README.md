@@ -31,6 +31,9 @@ print(get_random_secret_key())
 - [ ] clean_gespharx8_excel
 
     Uploads Excel file by creating a user view, save data in dict, clean and commit data into database model using save()
+    
+    Models = cleaned data
+    Forms for file upload
 
 - [ ] drug_shortage_api
 
@@ -38,9 +41,13 @@ print(get_random_secret_key())
 
     Make this task a background task using Celery
 
+    Link retrieved info with foreign key model to link with the model from the first app
+
 - [ ] display_table
 
     Display data with Queryset. Consider creating a custom manager to better query data
+
+    Don't need to be an app per se. Just display everything
 
 ## About
 This django project is used to fetch Canadian Drug Shortage api from Gespharx8 exported spreadsheet. 
