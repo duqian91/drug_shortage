@@ -64,7 +64,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third-party
-    # ...
+    'import_export',
     # local
     'drug_shortage.apps.upload_and_clean_excel',
     # ...

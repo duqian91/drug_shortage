@@ -30,10 +30,9 @@ print(get_random_secret_key())
 ## Project apps
 - [ ] clean_gespharx8_excel
 
-    Uploads Excel file by creating a user view, save data in dict, clean and commit data into database model using save()
-    
-    Models = cleaned data
-    Forms for file upload
+    Use import export django for importing file format
+
+    What is left: complete model and complete view to clean the data upon upload so there are no errors, change file format to excel
 
 - [ ] drug_shortage_api
 
