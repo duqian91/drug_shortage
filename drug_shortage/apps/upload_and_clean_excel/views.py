@@ -13,12 +13,14 @@ def upload(request):
         new_medication = request.FILES['myfile']
 
         imported_data = dataset.load(new_medication.read().decode(), format='csv', headers='True')
-        result = medication_resource.import_data(dataset, dry_run=True)  # Test the data import
+        result = medication_resource.import_data(dataset, dry_run=True, raise_errors=True)  # Test the data import
+        # take off raise_errors when the test is done
         # add code here to clean the data so that the format will fit with the model
         # needs to have the first column with header "id" for the file to save
 
         if result.has_errors():
             print('there are errors in the upload process')
+            # add a behavior to show user that there is an error
 
         elif not result.has_errors():
             medication_resource.import_data(dataset, dry_run=False)  # Actually import now
