@@ -7,12 +7,17 @@ class MedicationResource(resources.ModelResource):
 
         # exclude = ('id')
         
-        # import_id_fields = ('gespharx_id',)
+        import_id_fields = ('gespharx_id',)
         # will only import these fields
         # fields = ('gespharx_id', 'din', 'generic_name')
 
-    # use_transactions = True
+    # # use_transactions = True
 
+    # function used to add empty id header, now used to debug only
+    def before_import(self, dataset, using_transactions, dry_run, **kwargs):
+    #     dataset.insert_col(0, col=["",]*dataset.height, header="id")
+        print(dataset)
+        
     def before_import_row(self, row, **kwargs):
         print(row)
         # added zeros to the din

@@ -12,7 +12,8 @@ def upload(request):
         dataset = Dataset()
         new_medication = request.FILES['myfile']
 
-        imported_data = dataset.load(new_medication.read().decode(), format='csv', headers='True')
+        # need to add encoding utf-8-sig or there will be importing errors
+        imported_data = dataset.load(new_medication.read().decode(encoding='utf-8-sig'), format='csv', headers='True')
         result = medication_resource.import_data(dataset, dry_run=True, raise_errors=True)  # Test the data import
         # take off raise_errors when the test is done
         # add code here to clean the data so that the format will fit with the model
